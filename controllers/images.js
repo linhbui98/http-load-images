@@ -4,7 +4,7 @@ const { getFile } = require('../shared');
 
 module.exports = {
     getImages: (req, res) => {
-        const host = req.headers.host.split(':')[0];
+        const host = req.headers.host;
         res.render('index', {
             title: 'HTTP/1.x',
             host: host,
