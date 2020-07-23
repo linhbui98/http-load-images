@@ -1,8 +1,8 @@
 const Express = require('express');
 const Http = require('http');
-const Https = require('https');
+// const Https = require('https');
+// const { certificate } = require('./shared');
 const path = require('path')
-const { certificate } = require('./shared');
 const config = require('./config')
 const PORT = config.port || 3001;
 const indexRoute = require('./routes/index');
@@ -26,9 +26,5 @@ http1app.get('/', indexRoute)
 // });
 
 Http.createServer(http1app).listen(PORT, () => {
-    console.log("App running")
-});
-
-Http.createServer(http1app).listen(process.env.PORT2 || 3002, () => {
     console.log("App running")
 });
