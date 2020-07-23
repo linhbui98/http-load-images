@@ -1,7 +1,7 @@
 const Express = require('express');
-// const Http = require('http');
-const Https = require('https');
-const { certificate } = require('./shared');
+const Http = require('http');
+// const Https = require('https');
+// const { certificate } = require('./shared');
 const path = require('path')
 const config = require('./config')
 const PORT = config.port || 3001;
@@ -21,10 +21,10 @@ http1app.set('views', path.join(__dirname, 'views'));
 http1app.set('view engine', 'pug');
 http1app.get('/', indexRoute)
 
-Https.createServer(certificate, http1app).listen(PORT, () => {
-    console.log("App running")
-});
-
-// Http.createServer(http1app).listen(PORT, () => {
+// Https.createServer(certificate, http1app).listen(PORT, () => {
 //     console.log("App running")
 // });
+
+Http.createServer(http1app).listen(PORT, () => {
+    console.log("App running")
+});
