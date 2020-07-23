@@ -21,7 +21,11 @@ http1app.set('views', path.join(__dirname, 'views'));
 http1app.set('view engine', 'pug');
 http1app.get('/', indexRoute)
 
-Https.createServer(certificate, http1app).listen(PORT, () => {
+// Https.createServer(certificate, http1app).listen(PORT, () => {
+//     console.log("App running")
+// });
+
+Http.createServer(http1app).listen(PORT, () => {
     console.log("App running")
 });
 
