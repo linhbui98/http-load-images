@@ -15,7 +15,7 @@ http1app.use(function(req, res, next) {
     res.header('Pragma', 'no-cache');
     next()
 });
-http1app.use(Express.static('assets'));
+// http1app.use(Express.static('assets'));
 
 http1app.set('views', path.join(__dirname, 'views'));
 http1app.set('view engine', 'pug');
